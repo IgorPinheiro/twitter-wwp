@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Twitteers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Twitteer</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @twitteers.each do |twitteer| %>
+      <tr>
+        <td><%= twitteer.twitteer %></td>
+        <td><%= link_to 'Show', twitteer %></td>
+        <td><%= link_to 'Edit', edit_twitteer_path(twitteer) %></td>
+        <td><%= link_to 'Destroy', twitteer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Twitteer', new_twitteer_path %>

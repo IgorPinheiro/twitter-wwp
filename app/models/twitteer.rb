@@ -1,0 +1,2 @@
+class Twitteer < ApplicationRecord
+end
