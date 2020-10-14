@@ -4,7 +4,7 @@ class TwitteersController < ApplicationController
   # GET /twitteers
   # GET /twitteers.json
   def index
-    @twitteers = Twitteer.all
+    @twitteers = Twitteer.all.order("created_at DESC")
   end
 
   # GET /twitteers/1

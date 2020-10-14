@@ -1,0 +1,44 @@
+<div class="column is-half">
+    <article class="media box">
+        <figure class="media-left">
+            <p class="image is-64X64">
+                <img src="https://bulma.io/images/placeholders/64x64.png">
+            </p>
+        <figure>
+        <div class="media-content">
+            <% render "twitteer/form" %>
+        </div>
+    <article>
+</div>
+
+<% @twitteers.each do |twitteer| %>
+    <div class="box">
+        <article class="media">
+            <div class="media-left">
+                <figure class="image is-64x64">
+                    <img src="https://bulma.io/images/placeholders/64x64.png">
+                </figure>
+            </div>
+
+            <div class="media-content">
+                <div class="content">
+                    <strong>Igor Pinheiro</strong><br />
+                    <small>https://github.com/IgorPinheiro</small><br />
+                    <p><%= twitteer.twitteer %></p>
+                </div>
+                <nav class="level">
+                    <div class="level-left is-mobile">
+                        <%= link_to twitteer, class: "level-item" do %>
+                            <span class="icon"><i class="fa fa-link", aria-hidden="true"></i></span>
+                        <% end %>
+                        <%= link_to edit_twitteer_path(twitteer), class: "level-item" do %>
+                            <span class="icon"><i class="fa fa-pencil", aria-hidden="true"></i></span>
+                        <% end %> 
+                        <%= link_to twitteer, method: :delete, data: {confirm: "Are you shure to dele this twitteer?"} do %>
+                            <span class="icon"><i class="fa fa-trash-o", aria-hidden="true"></i></span>
+                        <% end %>
+
+            </div>
+        </article>    
+    </div>    
+<% end %>
